@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About Us | Eutine Digitals</title>
+<link rel="stylesheet" href="css/style.css">
+
+<script src="js/script.js" defer></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --brand:#0077b6;
+      --bg:#f5f7fa;
+      --card:#fff;
+      --muted:#555;
+    }
+
+    * { box-sizing:border-box; margin:0; padding:0 }
+
+    body {
+      font-family:'Poppins',sans-serif;
+      background:var(--bg);
+      color:#222;
+      line-height:1.6;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:16px 32px;
+      background:#fff;
+      box-shadow:0 2px 6px rgba(0,0,0,0.06);
+      position:sticky;
+      top:0;
+      z-index:100;
+    }
+    .logo { font-weight:700; font-size:22px; color:var(--brand); }
+    .logo span { color:#222; }
+    .nav-links { list-style:none; display:flex; gap:20px; }
+    .nav-links a {
+      text-decoration:none;
+      color:#333;
+      font-weight:600;
+      transition:.2s;
+    }
+    .nav-links a:hover { color:var(--brand); }
+
+    /* PAGE HEADER */
+    header.page-header {
+      text-align:center;
+      padding:50px 20px 20px;
+    }
+    header.page-header h1 {
+      font-size:36px;
+      color:var(--brand);
+      margin-bottom:10px;
+    }
+    header.page-header p {
+      color:var(--muted);
+      font-size:16px;
+    }
+
+    /* ABOUT CONTENT */
+    .about-container {
+      max-width:900px;
+      margin:40px auto;
+      padding:0 20px;
+      display:grid;
+      grid-template-columns:1fr;
+      gap:30px;
+    }
+    .card {
+      background:var(--card);
+      padding:30px;
+      border-radius:12px;
+      box-shadow:0 6px 16px rgba(0,0,0,0.08);
+      transition:transform .25s;
+    }
+    .card:hover { transform:translateY(-5px); }
+    .card h2 {
+      margin-bottom:12px;
+      font-size:22px;
+      color:var(--brand);
+      text-align:center;
+    }
+    .card p { color:var(--muted); }
+
+    /* PROFILE PHOTO */
+    .profile-pic {
+      display:block;
+      margin:0 auto 20px;
+      width:150px;
+      height:150px;
+      border-radius:50%;
+      object-fit:cover;
+      border:4px solid var(--brand);
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    /* FOOTER */
+    footer {
+      background:#fff;
+      padding:20px;
+      text-align:center;
+      color:#777;
+      font-size:14px;
+      box-shadow:0 -2px 6px rgba(0,0,0,0.05);
+      margin-top:40px;
+    }
+  </style>
+</head>
+<body>
+<div class="slideshow-bg"></div>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="logo">Eutine <span>Digitals</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="page-header">
+    <h1>About Eutine Digitals</h1>
+    <p>Turning ideas into digital realities with innovation, clarity, and growth.</p>
+  </header>
+
+  <!-- CONTENT -->
+  <section class="about-container">
+    <div class="card">
+      <h2>Who We Are</h2>
+      <p>
+        Eutine Digitals is a creative and data-driven agency dedicated to helping individuals, students, and businesses thrive in today’s digital world. 
+        We provide tailored solutions in research assistance, project writing, web development, branding, marketing, and digital transformation. 
+        Our work is guided by a simple goal: to simplify complex challenges and turn them into opportunities for success.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Our Mission</h2>
+      <p>
+        To empower people and organizations with impactful digital services that combine clarity, creativity, and technology. 
+        We believe in delivering not just results, but knowledge — helping our clients grow stronger, smarter, and more confident.
+      </p>
+    </div>
+
+    <div class="card">
+      <h2>Our Vision</h2>
+      <p>
+        To be a trusted partner for digital innovation and academic excellence, inspiring people across Nigeria and beyond to embrace 
+        technology as a tool for progress and sustainable growth.
+      </p>
+    </div>
+
+    <div class="card">
+      <img src="../images/eutine 4.jpg" alt="Eutine Profile" class="profile-pic">
+      <h2>About Eutine</h2>
+      <p>
+        David Fredrick is the founder and lead consultant of Eutine Digitals. 
+        He holds a first degree in <strong>Computer Science and Education (Second Class Upper, 2:1)</strong> 
+        and is currently pursuing his Master’s degree in <strong>Educational Technology</strong> at Ekiti State University.  
+        <br><br>
+        With a passion for knowledge, creativity, and problem-solving, Eutine has supported countless clients in academic, professional, 
+        and business projects. His expertise spans project writing, data analysis, research assistance, web development, branding, and digital marketing.  
+        <br><br>
+        More than just delivering services, Eutine is committed to mentorship and training. 
+        He believes that true success comes not only from solving problems but also from equipping people with the tools and skills to thrive on their own. 
+        His work is driven by the belief that with the right mindset and support, anyone can achieve digital success.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    Eutine Digitals| Simply Good
+  </footer>
+
+</body>
+</html>

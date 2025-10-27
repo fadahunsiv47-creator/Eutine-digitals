@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eutine Digitals | Home</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="js/script.js" defer></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --brand:#0077b6;
+      --bg:#f5f7fa;
+      --card:#fff;
+      --muted:#555;
+      --whatsapp:#25D366;
+    }
+
+    * { box-sizing:border-box; margin:0; padding:0; }
+
+    body {
+      font-family:'Poppins',sans-serif;
+      background:var(--bg);
+      color:#222;
+      line-height:1.6;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:16px 32px;
+      background:#fff;
+      box-shadow:0 2px 6px rgba(0,0,0,0.06);
+      position:sticky;
+      top:0;
+      z-index:100;
+    }
+    .logo { font-weight:700; font-size:22px; color:var(--brand); }
+    .logo span { color:#222; }
+    .nav-links { list-style:none; display:flex; gap:20px; }
+    .nav-links a { text-decoration:none; color:#333; font-weight:600; transition:.2s; }
+    .nav-links a:hover, .nav-links a.active { color:var(--brand); }
+
+    /* HERO */
+    .hero { text-align:left; padding:50px 20px 30px; }
+    .hero h1 { font-size:36px; color:var(--brand); margin-bottom:10px; }
+    .hero p { color:var(--muted); font-size:16px; }
+
+    /* SERVICES GRID */
+    .services-grid { max-width:450px; margin:20px auto; padding:0 0px; }
+    .grid-container {
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:20px;
+    }
+    .grid-container a {
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:40px;
+      background:var(--brand);
+      color:#fff;
+      font-weight:600;
+      font-size:16px;
+      border-radius:12px;
+      text-decoration:none;
+      aspect-ratio:1/1;
+      transition:.3s;
+    }
+    .grid-container a:hover { background:#005f86; }
+
+    /* POPUP */
+    .popup {
+      position:fixed;
+      bottom:20px;
+      left:20px;
+      background:#fff;
+      padding:20px;
+      border-radius:12px;
+      box-shadow:0 6px 16px rgba(0,0,0,0.2);
+      max-width:250px;
+      animation:fadeIn 1s ease forwards;
+      font-size:14px;
+      z-index:200;
+    }
+    .popup h4 { margin-bottom:10px; color:var(--brand); }
+    .popup button {
+      margin-top:10px;
+      padding:10px;
+      width:100%;
+      border:none;
+      background:var(--brand);
+      color:#fff;
+      border-radius:6px;
+      font-weight:600;
+      cursor:pointer;
+      transition:.3s;
+    }
+    .popup button:hover { background:#005f86; }
+
+    @keyframes fadeIn { from { opacity:0; transform:translateX(-20px); } to { opacity:1; transform:translateX(0); } }
+
+    /* QUOTES BOX */
+    .quotes-box {
+      position:fixed;
+      right:20px;
+      top:150px;
+      width:250px;
+      padding:20px;
+      background:#fff;
+      border-radius:12px;
+      box-shadow:0 6px 16px rgba(0,0,0,0.2);
+      font-size:14px;
+      color:#333;
+      z-index:100;
+    }
+
+    /* FOOTER */
+    footer {
+      background:#fff;
+      padding:20px;
+      text-align:center;
+      color:#777;
+      font-size:14px;
+      box-shadow:0 -2px 6px rgba(0,0,0,0.05);
+      margin-top:20px;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:600px) { .grid-container { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+<div class="slideshow-bg"></div>
+
+</div>
+
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="logo">Eutine <span>Digitals</span></div><link rel="stylesheet" href="css/style.css">
+
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>We Power Data into Digital Success</h1>
+    <p>Helping businesses grow through data-driven solutions, insights, and digital transformation.</p>
+  </section>
+
+  <!-- SERVICES GRID -->
+  <section class="services-grid">
+    <div class="grid-container">
+      <a href="projectwriting.html" class="service-btn">Project Writing & Research Assistance</a>
+    <a href="data-analysis.html" class="service-btn">Data Analysis</a>
+    <a href="web-development.html" class="service-btn">Web Development & Maintainance</a>
+    <a href="research.html" class="service-btn">Research Assistance</a>
+    <a href="graphic design.html" class="service-btn">Graphic Design / Branding</a>
+    <a href="training.html" class="service-btn">Training & Consultation</a>
+    <a href="marketing.html" class="service-btn">Digital Marketing</a>
+    <a href="webthesis.html" class="service-btn">Proof Reading & Assignment Assistance</a>
+    </div>
+  </section>
+
+  <!-- POPUP -->
+  <div class="popup" id="popup">
+   <div class="popup" id="popup">
+  <h4>Need Training or Consultation?</h4>
+  <p>Join Eutine for personalized training and expert consultation to boost your skills and projects.</p>
+  <!-- Change button to navigate to training page -->
+  <button onclick="window.location.href='training.html'">I'm Interested</button>
+</div>
+
+  </div>
+<!-- QUOTES BOX -->
+<div class="quotes-box" id="quotesBox">Loading inspirational quotes...</div>
+
+<script>
+  const quotesBox = document.getElementById('quotesBox');
+
+  // Embed quotes directly in JS to avoid fetch issues
+  const quotes = [
+    "Success is not final; failure is not fatal: It is the courage to continue that counts.",
+    "Innovation distinguishes between a leader and a follower.",
+    "The best way to predict the future is to invent it.",
+    "Don't watch the clock; do what it does. Keep going.",
+    "Every great achievement begins with a decision to try.",
+    "Believe you can and you're halfway there.",
+    "Your limitation—it’s only your imagination.",
+    "Push yourself, because no one else is going to do it for you.",
+    "Sometimes later becomes never. Do it now.",
+    "Dream it. Wish it. Do it.",
+    "Great things never come from comfort zones.",
+    "Don’t wait for opportunity. Create it.",
+    "Success doesn’t just find you. You have to go out and get it.",
+    "The harder you work for something, the greater you’ll feel when you achieve it.",
+    "Dream bigger. Do bigger.",
+    "Don’t stop when you’re tired. Stop when you’re done.",
+    "Little things make big days.",
+    "It’s going to be hard, but hard does not mean impossible.",
+    "Don’t wait for the right moment. Take the moment and make it right.",
+    "Sometimes we’re tested not to show our weaknesses, but to discover our strengths.",
+    "Great things take time.",
+    "Small steps every day lead to big results.",
+    "Your passion is waiting for your courage to catch up.",
+    "Push beyond your limits and you will be amazed at what you achieve.",
+    "Hard work beats talent when talent doesn’t work hard.",
+    "Success is the sum of small efforts repeated day in and day out."
+  ];
+
+  let currentIndex = 0;
+
+  function showQuote() {
+    quotesBox.innerText = quotes[currentIndex];
+    currentIndex = (currentIndex + 1) % quotes.length;
+  }
+
+  // Show first quote immediately
+  showQuote();
+  // Rotate every 5 seconds
+  setInterval(showQuote,5000);
+</script>
+<script src="script.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portfolio | Eutine Digitals</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/script.js" defer></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --brand:#0077b6;
+      --bg:#f5f7fa;
+      --card:#fff;
+      --muted:#555;
+    }
+
+    * { box-sizing:border-box; margin:0; padding:0 }
+
+    body {
+      font-family:'Poppins',sans-serif;
+      background:var(--bg);
+      color:#222;
+      line-height:1.6;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:16px 32px;
+      background:#fff;
+      box-shadow:0 2px 6px rgba(0,0,0,0.06);
+      position:sticky;
+      top:0;
+      z-index:100;
+    }
+    .logo { font-weight:700; font-size:22px; color:var(--brand); }
+    .logo span { color:#222; }
+    .nav-links { list-style:none; display:flex; gap:20px; }
+    .nav-links a {
+      text-decoration:none;
+      color:#333;
+      font-weight:600;
+      transition:.2s;
+    }
+    .nav-links a:hover { color:var(--brand); }
+
+    /* HERO */
+    header.hero {
+      text-align:center;
+      padding:50px 20px 30px;
+    }
+    header.hero h1 {
+      font-size:36px;
+      color:var(--brand);
+      margin-bottom:10px;
+    }
+    header.hero p {
+      color:var(--muted);
+      font-size:16px;
+    }
+
+    /* IMPACT NUMBERS */
+    .stats {
+      display:flex;
+      justify-content:center;
+      gap:40px;
+      margin:20px 0 40px;
+      flex-wrap:wrap;
+    }
+    .stat {
+      text-align:center;
+    }
+    .stat h2 {
+      font-size:32px;
+      color:var(--brand);
+    }
+    .stat p { color:var(--muted); }
+
+    /* PORTFOLIO GRID */
+    .portfolio-grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:20px;
+      max-width:900px;
+      margin:0 auto 40px;
+      padding:0 20px;
+    }
+    .portfolio-card {
+      background:var(--card);
+      border-radius:12px;
+      padding:30px;
+      text-align:center;
+      box-shadow:0 6px 16px rgba(0,0,0,0.08);
+      transition:transform .25s;
+      aspect-ratio:1/1; /* square */
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+    }
+    .portfolio-card:hover { transform:translateY(-5px); }
+    .portfolio-card h3 {
+      font-size:18px;
+      color:var(--brand);
+      margin-bottom:10px;
+    }
+    .portfolio-card p {
+      font-size:14px;
+      color:var(--muted);
+    }
+
+    /* LINKEDIN BUTTON */
+    .linkedin-btn {
+      display:block;
+      margin:0 auto 50px;
+      background:var(--brand);
+      color:#fff;
+      padding:14px 28px;
+      border-radius:8px;
+      font-size:16px;
+      font-weight:600;
+      text-decoration:none;
+      transition:.3s;
+      text-align:center;
+      width:max-content;
+    }
+    .linkedin-btn:hover {
+      background:#005f86;
+    }
+
+    /* POPUP INVITE */
+    .popup {
+      position:fixed;
+      bottom:20px;
+      left:20px;
+      background:#fff;
+      padding:20px;
+      border-radius:12px;
+      box-shadow:0 6px 16px rgba(0,0,0,0.2);
+      max-width:250px;
+      animation:fadeIn 1s ease forwards;
+      font-size:14px;
+      z-index:200;
+    }
+    .popup h4 {
+      margin-bottom:10px;
+      color:var(--brand);
+    }
+    .popup button {
+      margin-top:10px;
+      padding:10px;
+      width:100%;
+      border:none;
+      background:var(--brand);
+      color:#fff;
+      border-radius:6px;
+      font-weight:600;
+      cursor:pointer;
+      transition:.3s;
+    }
+    .popup button:hover { background:#005f86; }
+
+    @keyframes fadeIn {
+      from { opacity:0; transform:translateX(-20px); }
+      to { opacity:1; transform:translateX(0); }
+    }
+
+    /* FOOTER */
+    footer {
+      background:#fff;
+      padding:20px;
+      text-align:center;
+      color:#777;
+      font-size:14px;
+      box-shadow:0 -2px 6px rgba(0,0,0,0.05);
+      margin-top:20px;
+    }
+  </style>
+</head>
+<body>
+<div class="slideshow-bg"></div>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="logo">Eutine <span>Digitals</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html" class="active">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <h1>Eutine’s Portfolio</h1>
+    <p>Proven experience and measurable results across digital services.</p>
+  </header>
+
+  <!-- IMPACT NUMBERS -->
+  <div class="stats">
+    <div class="stat">
+      <h2>50+</h2>
+      <p>Websites Built</p>
+    </div>
+    <div class="stat">
+      <h2>100+</h2>
+      <p>Data Reports</p>
+    </div>
+    <div class="stat">
+      <h2>300+</h2>
+      <p>Projects & Research</p>
+    </div>
+  </div>
+
+  <!-- PORTFOLIO GRID -->
+  <section class="portfolio-grid">
+    <div class="portfolio-card">
+      <h3>Web Development</h3>
+      <p>Custom websites designed for functionality, creativity, and user experience.</p>
+    </div>
+    <div class="portfolio-card">
+      <h3>Data Analysis & Reports</h3>
+      <p>Transforming raw data into clear insights that drive smart decisions.</p>
+    </div>
+    <div class="portfolio-card">
+      <h3>Project & Research Writing</h3>
+      <p>Helping students and professionals present their ideas with clarity and depth.</p>
+    </div>
+    <div class="portfolio-card">
+      <h3>Branding & Marketing</h3>
+      <p>Building strong brand identities and strategies for business growth.</p>
+    </div>
+  </section>
+
+  <!-- LINKEDIN BUTTON -->
+  <a href="#" class="linkedin-btn">Connect with Me on LinkedIn</a>
+
+  <!-- POPUP -->
+  <div class="popup" id="popup">
+    <h4>Need Training or Consultation?</h4>
+    <p>Join Eutine for personalized training and expert consultation to boost your skills and projects.</p>
+    <button onclick="closePopup()">I'm Interested</button>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2025 Eutine Digitals | Simply Good
+  </footer>
+
+  <!-- JS -->
+  <script>
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+  </script>
+</body>
+</html>

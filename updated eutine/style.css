@@ -1,0 +1,342 @@
+/* ==========================================
+   GLOBAL RESET & BASE STYLES
+   ========================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  position: relative;
+}
+
+/* ==========================================
+   BACKGROUND SLIDESHOW
+   ========================================== */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  animation: slideshow 18s infinite;
+  z-index: -2;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+/* Keyframes for background images */
+/* Goes up one folder: ../images/ */
+@keyframes slideshow {
+  0% {
+    background-image: url("../images/digital1.jpg");
+  }
+  20% {
+    background-image: url("../images/digital2.jpg");
+  }
+  40% {
+    background-image: url("../images/load3.jpg");
+  }
+ 60% {
+    background-image: url("../images/eutine5.jpg");
+
+  }
+80% {
+  background-image: url(../images/eutine6.jpg);
+}
+100% {
+  background-image: url(../images/digital1.jpg);
+}
+}
+
+/* ==========================================
+   HEADER / NAVBAR
+   ========================================== */
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: flex-start; /* 👈 Align everything to the left */
+  align-items: center;
+  padding: 16px 32px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--brand);
+  margin-right: 40px; /* 👈 Adds space between logo and links */
+}
+
+.logo span { color: #222; }
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: .2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--brand);
+}
+
+
+/* ==========================================
+   MAIN CONTENT
+   ========================================== */
+main {
+  flex: 1;
+  margin-top: 100px; /* space for navbar */
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.overlay {
+  max-width: 700px;
+  padding: 20px;
+}
+
+.overlay h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.overlay h1 span {
+  color: #ff69b4;
+}
+
+.overlay p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+.book-btn {
+  background-color: #ff69b4;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 25px;
+  transition: 0.3s ease;
+}
+
+.book-btn:hover {
+  background-color: #ff1493;
+  transform: scale(1.05);
+}
+
+/* ==========================================
+   GRID SECTION (BUTTONS / FEATURES)
+   ========================================== */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+  gap: 30px;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.grid-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 160px;
+  background: rgba(0, 123, 255, 0.8);
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s,  0.3s;
+  backdrop-filter: blur(3px);
+}
+
+.grid-btn:hover {
+  background: rgba(0, 86, 179, 0.9);
+  transform: scale(1.05);
+}
+/* ===============================
+   QUOTES BOX
+   =============================== */
+.quotes-box {
+  background: rgba(255, 255, 255, 0.12);
+  border-left: 4px solid #ff69b4;
+  border-radius: 15px;
+  padding: 25px 35px;
+  color: #fff;
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: center;
+  margin: 30px auto;
+  max-width: 800px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.quotes-box::before {
+  content: "“";
+  font-size: 4rem;
+  color: #ff69b4;
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  opacity: 0.3;
+}
+
+.quotes-box::after {
+  content: "”";
+  font-size: 4rem;
+  color: #ff69b4;
+  position: absolute;
+  bottom: -20px;
+  right: 20px;
+  opacity: 0.3;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+footer {
+  width: 100%;
+  background: #222;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  z-index: 1;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+@media (max-width: 900px) {
+  .overlay h1 {
+    font-size: 2.3rem;
+  }
+
+  .overlay p {
+    font-size: 1rem;
+  }
+
+  .grid-btn {
+    height: 130px;
+    font-size: 16px;
+  }
+
+  header {
+    padding: 10px 20px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+}
+/* Background Slideshow */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.slideshow-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  animation: slideShow 18s infinite;
+  transition: background-image 1s ease-in-out;
+}
+
+@keyframes slideShow {
+  0% { background-image: url('../images/bg1.jpg'); }
+  33% { background-image: url('../images/bg2.jpg'); }
+  66% { background-image: url('../images/bg3.jpg'); }
+  100% { background-image: url('../images/bg1.jpg'); }
+}
+/* ===== Background Slideshow ===== */
+.slideshow-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
+  transition: background-image 1s ease-in-out;
+}

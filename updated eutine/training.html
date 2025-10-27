@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Training & Consultation | Eutine Digitals</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/script.js" defer></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --brand:#007bff;
+      --accent:#4caf50;
+      --bg:#f5f7fa;
+      --muted:#666;
+      --card:#ffffff;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:'Poppins',sans-serif;
+      background:var(--bg);
+      color:#222;
+    }
+
+    /* Navbar */
+    .navbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:14px 28px;
+      background:#fff;
+      box-shadow:0 2px 6px rgba(0,0,0,0.06);
+      position:sticky;top:0;z-index:50;
+    }
+    .logo{font-weight:700;color:var(--brand);font-size:20px}
+    .logo span{color:#222}
+    .nav-links{list-style:none;display:flex;gap:18px;margin:0;padding:0}
+    .nav-links a{text-decoration:none;color:#333;font-weight:600;transition:.2s}
+    .nav-links a:hover{color:var(--brand)}
+
+    /* Main content */
+    main{padding:36px;max-width:1000px;margin:30px auto}
+    .card{
+      background:var(--card);
+      border-radius:12px;
+      padding:30px;
+      box-shadow:0 8px 20px rgba(10,20,30,0.06);
+      opacity:0;
+      transform:translateY(8px);
+      animation:fadeIn 600ms ease-out forwards;
+    }
+    @keyframes fadeIn{
+      to{opacity:1; transform:translateY(0)}
+    }
+
+    h1{color:var(--brand);font-size:32px;margin:0 0 10px}
+    .lead{color:var(--muted);font-size:16px;margin:0 0 18px;line-height:1.6}
+    .details{font-size:16px;line-height:1.7;color:#333;margin-bottom:22px;max-width:820px}
+
+    .cta{
+      display:inline-block;
+      background:var(--accent);
+      color:#fff;
+      padding:12px 18px;
+      border-radius:8px;
+      font-weight:700;
+      cursor:pointer;
+      border:none;
+      transition:.2s;
+    }
+    .cta:hover{background:#388e3c}
+
+    /* Left popup modal */
+    .modal-backdrop{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.35);
+      display:flex;
+      justify-content:flex-start;
+      align-items:center;
+      visibility:hidden;
+      opacity:0;
+      transition:opacity .3s, visibility .3s;
+      z-index:200;
+    }
+    .modal-backdrop.open{
+      visibility:visible;
+      opacity:1;
+    }
+    .modal{
+      width:clamp(260px, 30vw, 400px);
+      background:#ffffff;
+      border-radius:0 12px 12px 0;
+      padding:24px;
+      box-shadow:4px 0 20px rgba(0,0,0,0.25);
+      transform:translateX(-100%);
+      transition:transform .3s ease;
+    }
+    .modal-backdrop.open .modal{
+      transform:translateX(0);
+    }
+    .modal h2{color:var(--brand);margin-bottom:8px}
+    .modal p{color:#444;margin-bottom:16px;line-height:1.5}
+    .btn-row{display:flex;gap:12px;justify-content:flex-start}
+    .primary{
+      background:var(--brand);color:#fff;padding:10px 14px;
+      border:none;border-radius:6px;font-weight:600;cursor:pointer;
+    }
+    .secondary{
+      background:#f1f5f9;color:#333;padding:10px 14px;
+      border:none;border-radius:6px;cursor:pointer;
+    }
+
+    footer{padding:26px;text-align:center;color:#666;font-size:14px}
+  </style>
+</head>
+<body>
+<div class="slideshow-bg"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="logo">Eutine <span>Digitals</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </header>
+
+  <!-- CONTENT -->
+  <main>
+    <article class="card">
+      <h1>Training & Consultation</h1>
+      <p class="lead">Knowledge is power — but guidance makes the journey smoother. We empower you with skills and mentorship to thrive in the digital space.</p>
+
+      <section class="details">
+        <p>
+          Whether you’re a beginner eager to learn or a business owner seeking strategic digital solutions, 
+          Eutine Digitals offers personalized training and one-on-one consultation sessions.  
+          Our approach is practical, interactive, and tailored to your goals.
+        </p>
+        <p>
+          From mastering digital tools to understanding advanced strategies, 
+          we ensure you gain the confidence to put your knowledge into action and see real results.
+        </p>
+        <p> we train staff and other personels in the use of basic and advance skills for effective managerial purposes </p>
+      </section>
+
+      <button class="cta" id="openCta">📚 Book a Session</button>
+    </article>
+  </main>
+
+  <!-- MODAL -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal">
+      <h2>Ready to Learn & Grow?</h2>
+      <p>
+        Join our training and consultation sessions today.  
+        Learn from industry experts, ask questions, and get tailored solutions for your personal or business needs.  
+        Invest in knowledge that pays for a lifetime.
+      </p>
+      <div class="btn-row">
+        <button class="primary" id="modalContact">Get Consultation</button>
+        <button class="secondary" id="modalClose">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>Eutine Digitals | Simply Good </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const openBtn = document.getElementById('openCta');
+      const backdrop = document.getElementById('modalBackdrop');
+      const closeBtn = document.getElementById('modalClose');
+      const contactBtn = document.getElementById('modalContact');
+
+      if(openBtn){
+        openBtn.addEventListener('click', () => {
+          backdrop.classList.add('open');
+        });
+      }
+
+      if(closeBtn){
+        closeBtn.addEventListener('click', () => {
+          backdrop.classList.remove('open');
+        });
+      }
+
+      if(backdrop){
+        backdrop.addEventListener('click', e => {
+          if (e.target === backdrop) backdrop.classList.remove('open');
+        });
+      }
+
+      if(contactBtn){
+        contactBtn.addEventListener('click', () => {
+          window.location.href = 'contact.html';
+        });
+      }
+
+      document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') backdrop.classList.remove('open');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!--
+  project-writing.html
+  --------------------
+  - Service detail page for "Project Writing"
+  - Fade-in animation on load
+  - Modal popup CTA that invites users to Training & Consultation
+  - Navbar links assume files: index.html, services.html, portfolio.html, about.html, contact.html
+  - Copy / adapt for other service pages (change h1, paragraph text, modal copy)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="css/style.css">
+<script src="js/script.js" defer></script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Project Writing | Eutine Digitals</title>
+
+  <!-- Poppins font (matches site) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ---------- Page base (keeps consistent with main site) ---------- */
+    :root{
+      --brand:#007bff;
+      --accent:#ff9800;
+      --bg:#f5f7fa;
+      --muted:#666;
+      --card:#ffffff;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:'Poppins',sans-serif;
+      background:var(--bg);
+      color:#222;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* ---------- Navbar (shared look) ---------- */
+    .navbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:14px 28px;
+      background:#fff;
+      box-shadow:0 2px 6px rgba(0,0,0,0.06);
+      position:sticky;
+      top:0;
+      z-index:50;
+    }
+    .logo{font-weight:700;color:var(--brand);font-size:20px}
+    .logo span{color:#222}
+    .nav-links{list-style:none;display:flex;gap:18px;margin:0;padding:0}
+    .nav-links a{text-decoration:none;color:#333;font-weight:600;transition:color .18s}
+    .nav-links a:hover{color:var(--brand)}
+
+    /* ---------- Page container & fade-in ---------- */
+    main{padding:36px;max-width:1000px;margin:30px auto}
+    .card{
+      background:var(--card);
+      border-radius:12px;
+      padding:30px;
+      box-shadow:0 8px 20px rgba(10,20,30,0.06);
+      opacity:0;
+      transform:translateY(8px);
+      animation:fadeIn 550ms ease-out forwards;
+    }
+    @keyframes fadeIn{
+      to{opacity:1; transform:translateY(0)}
+    }
+
+    /* ---------- Content typography ---------- */
+    h1{color:var(--brand);font-size:32px;margin:0 0 10px}
+    .lead{color:var(--muted);font-size:16px;margin:0 0 18px;line-height:1.6}
+    .details{font-size:16px;line-height:1.7;color:#333;margin-bottom:22px;max-width:820px}
+
+    /* ---------- CTA button ---------- */
+    .cta{
+      display:inline-block;
+      background:var(--accent);
+      color:#fff;
+      padding:12px 18px;
+      border-radius:8px;
+      border:none;
+      font-weight:700;
+      cursor:pointer;
+      box-shadow:0 6px 14px rgba(255,152,0,0.18);
+      transition:transform .15s,opacity .15s;
+    }
+    .cta:hover{transform:translateY(-3px)}
+
+    /* ---------- Modal (CTA) ---------- */
+    .modal-backdrop{
+      position:fixed;inset:0;
+      background:rgba(0,0,0,0.45);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      visibility:hidden;
+      opacity:0;
+      transition:opacity .18s,visibility .18s;
+      z-index:200;
+    }
+    .modal-backdrop.open{visibility:visible;opacity:1}
+    .modal{
+      width:clamp(300px,42vw,520px);
+      background:var(--card);
+      border-radius:12px;
+      padding:24px;
+      box-shadow:0 18px 50px rgba(10,20,30,0.15);
+      text-align:center;
+    }
+    .modal h2{margin:0 0 8px;color:var(--brand)}
+    .modal p{color:var(--muted);margin:0 0 18px;line-height:1.5}
+    .modal .btn-row{display:flex;gap:12px;justify-content:center}
+    .modal .primary{background:var(--brand);color:#fff;padding:10px 14px;border-radius:8px;border:none;cursor:pointer;font-weight:700}
+    .modal .secondary{background:#f1f5f9;color:#333;padding:10px 14px;border-radius:8px;border:none;cursor:pointer}
+
+    /* ---------- Footer ---------- */
+    footer{padding:26px;text-align:center;color:#666;font-size:14px}
+
+    /* ---------- Responsive ---------- */
+    @media(max-width:720px){
+      .nav-links{display:none}
+      main{padding:18px}
+      h1{font-size:26px}
+      .card{padding:20px}
+    }
+  </style>
+</head>
+<body>
+<div class="slideshow-bg"></div>
+
+  <!-- NAVBAR (shared across pages) -->
+  <header class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="logo" aria-hidden="true">Eutine <span>Digitals</span></div>
+
+    <!-- On larger screens you see these links; on mobile you can add a burger later -->
+    <ul class="nav-links" role="menubar" aria-label="Main links">
+      <li role="none"><a role="menuitem" href="index.html">Home</a></li>
+      <li role="none"><a role="menuitem" href="services.html">Services</a></li>
+      <li role="none"><a role="menuitem" href="portfolio.html">Portfolio</a></li>
+      <li role="none"><a role="menuitem" href="about.html">About</a></li>
+      <li role="none"><a role="menuitem" href="contact.html">Contact</a></li>
+    </ul>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <article class="card" aria-labelledby="pageTitle">
+      <!-- Page title -->
+      <h1 id="pageTitle">Project Writing</h1>
+
+      <!-- Short tagline -->
+      <p class="lead">We turn your ideas into clear, professional projects — proposals, reports, theses, and more.</p>
+
+      <!-- Humanized description -->
+      <section class="details" aria-label="Service description">
+        <p>
+          Project writing can be confusing or time-consuming — that’s where we help.<br> We research your topic,
+          structure your ideas, and deliver clean, well-formatted documents that communicate your message
+          clearly. Whether it's academic work, business proposals, or technical reports, we focus on clarity,
+          accuracy, and presentation so your project makes the right impression.
+        </p>
+<p> we also do other writings such as <strong>Business Writings</strong>, <strong> Ghost Writings</strong>, <strong> Novel Writings</strong>and <strong> Poems and Poetry </strong></p>
+        <p>
+          We work with you step-by-step: outlining, drafting, refining, and formatting — and we explain each
+          choice so you learn while we deliver. Perfect for students, startups, and professionals who want
+          a confident final product without the stress.
+        </p>
+      </section>
+
+      <!-- CTA button (opens modal) -->
+      <div>
+        <button class="cta" id="openCta">Book Training & Consultation</button>
+      </div>
+    </article>
+  </main>
+
+  <!-- CTA Modal (hidden by default) -->
+  <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal" role="document" aria-labelledby="modalTitle">
+      <h2 id="modalTitle">Join our Training & Consultation</h2>
+      <p>
+        Ready to level up? Our training sessions are hands-on and practical.
+        Sign up for a consultation and we’ll tailor a plan to your needs.
+      </p>
+
+      <!-- Modal actions: primary opens contact page; secondary closes -->
+      <div class="btn-row">
+        <button class="primary" id="modalContact">Request Consultation</button>
+        <button class="secondary" id="modalClose">Maybe later</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+  Eutine Digitals | Simply Good
+  </footer>
+
+  <script>
+    // ---------- Modal logic ----------
+    // Accessible: we toggle aria-hidden and focus management simply
+    const openBtn = document.getElementById('openCta');
+    const backdrop = document.getElementById('modalBackdrop');
+    const closeBtn = document.getElementById('modalClose');
+    const contactBtn = document.getElementById('modalContact');
+
+    // Open modal
+    openBtn.addEventListener('click', () => {
+      backdrop.classList.add('open');
+      backdrop.setAttribute('aria-hidden','false');
+      // trap focus simply by focusing the first button
+      contactBtn.focus();
+    });
+
+    // Close modal
+    closeBtn.addEventListener('click', () => {
+      backdrop.classList.remove('open');
+      backdrop.setAttribute('aria-hidden','true');
+      openBtn.focus();
+    });
+
+    // Primary action: go to contact page (or you can replace with a form handler)
+    contactBtn.addEventListener('click', () => {
+      // Example: navigate to contact page (user can fill contact form)
+      window.location.href = 'contact.html';
+    });
+
+    // Clicking backdrop outside modal closes it
+    backdrop.addEventListener('click', (e) => {
+      if (e.target === backdrop) {
+        backdrop.classList.remove('open');
+        backdrop.setAttribute('aria-hidden','true');
+        openBtn.focus();
+      }
+    });
+
+    // Close with Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && backdrop.classList.contains('open')) {
+        backdrop.classList.remove('open');
+        backdrop.setAttribute('aria-hidden','true');
+        openBtn.focus();
+      }
+    });
+  </script>
+</body>
+</html>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const openBtn = document.getElementById('openCta');
+    const backdrop = document.getElementById('modalBackdrop');
+    const closeBtn = document.getElementById('modalClose');
+    const contactBtn = document.getElementById('modalContact');
+
+    if(openBtn){  // ✅ Prevents red error if button not found
+      openBtn.addEventListener('click', () => {
+        backdrop.classList.add('open');
+      });
+    }
+
+    if(closeBtn){
+      closeBtn.addEventListener('click', () => {
+        backdrop.classList.remove('open');
+      });
+    }
+
+    if(backdrop){
+      backdrop.addEventListener('click', e => {
+        if (e.target === backdrop) backdrop.classList.remove('open');
+      });
+    }
+
+    if(contactBtn){
+      contactBtn.addEventListener('click', () => {
+        window.location.href = 'contact.html';
+      });
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') backdrop.classList.remove('open');
+    });
+  });
+</script>
